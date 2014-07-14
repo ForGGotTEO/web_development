@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %} | Page History for {% endblock %}
+
+{% block content %}
+    <table style="border: 3px dashed">
+    <th>Path</th><th>Content</th><th>Revision Date</th><th>Version</th>
+        {% for p in pages %}
+            <tr>
+                <td>{{p.url}}</td>
+                <td>{{ p.body }}</td>
+                <td>{{ p.revision }}</td>
+                <td>{{ p.version }}</td>
+                <td><a href="/edit/?v={{ p.version }}">Edit</a></td>
+                <td><a href="{{ p.url }}/?v={{ p.version }}"
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
