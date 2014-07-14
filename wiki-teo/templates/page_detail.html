@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% if page.url %}
+    {% if page.url == '/' %}
+
+    {% else %}
+       | {{ page.url }}
+    {% endif %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+    {{ page.body |safe }}
+    <div class="cache_time" style="color: #666">
+        Last cached {{ query_time }} seconds ago
+    </div>
+{% endblock %}
