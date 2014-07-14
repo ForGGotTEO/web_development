@@ -1,0 +1,14 @@
+indexes:
+
+
+
+- kind: Page
+  properties:
+  - name: url
+  - name: DESC
+
+- kind: Page
+  properties:
+  - name: url
+  - name: revision
+    direction: desc
