@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %} | Create an account{% endblock %}
+
+{% block content %}
+    <div style="color:red">
+        {% if err_lgn %}
+            {{ err_lgn }}
+        {% endif %}
+    </div>
+    <form method="post">
+        <label>Username:
+            <input type="text" name="username" value="{{ username }}">
+            <div style="color:red">
+            {% if err_unq %}
+                {{ err_unq }}
+            {% endif %}
+            {% if err_usr %}
+                {{ err_usr}}
+            {% endif %}
+            </div>
+        </label>
+        <label>Password:
+            <input type="password" name="password" value="{{ password }}">
+            <div style="color:red">
+            {{ err_pass1 }}
+            </div>
+        </label>
+        <label>Verify your password:
+            <input type="password" name="verify" value="{{ verify }}">
+            <div style="color:red">
+            {{ err_pass2 }}
+            </div>
+        </label>
+        <label>Email (optional)
+            <input type="text" name="email" value="{{ email }}">
+            <div style="color:red">
+            {{ err_email }}
+            </div>
+        </label>
+        <br>
+        <br>
+        <input type="submit" value="Sign-up">
+    </form>
+{% endblock %}
